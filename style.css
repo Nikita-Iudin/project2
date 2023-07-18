@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+body {
+    background-color:#082A5A; 
+}
+
+.container {
+    max-width:1307px; 
+    margin:0 auto; 
+   
+}
+.onewrapper {
+    background-image: url(img/bg1.png);
+    width: 100%;
+    height: 935px;
+    background-size:cover;
+     
+}
+
+@media (max-width: 480px) {
+    .onewrapper {
+        height: 100%;
+         
+    }
+}
+
+.header {
+    padding:0px 15px; 
+}
+
+@media (max-width: 990px) {
+    .header__menu {
+        display:none;
+    }
+}
+
+.header__menu._active {
+    display: block; 
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    background-color:#17006a;
+    z-index:10; 
+}
+
+.header__menu._active ul {
+    flex-direction:column; 
+    gap:20px; 
+    margin-top:85px; 
+    margin-left: 20px; 
+}
+
+
+
+
+.header__wrapper {
+    max-width:1307px; 
+    margin:0 auto; 
+    display:flex; 
+    align-items: center;
+    justify-content:space-between;
+    padding-top:34px; 
+}
+.header__logo > img {
+    max-width:100%; 
+}
+
+@media (max-width: 480px) {
+    .header__logo > img {
+        max-width: 80%;
+      }
+}
+.header__ul {
+    display:flex; 
+    gap:58px; 
+}
+.header__li {
+    list-style:none; 
+
+}
+.header__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    color: #FFFFFF;
+    text-decoration: none; 
+}
+
+.menu-btn {
+    width:30px;
+    height:30px;
+    position:relative; 
+    overflow:hidden; 
+    cursor:pointer; 
+    z-index:20; 
+
+}
+
+@media (min-width: 990px) {
+    .menu-btn {
+        display:none; 
+    }
+}
+
+.menu-btn span {
+    width:30px;
+    height:1px;
+    background-color:#ffffff; 
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition:all 0.5s; 
+}
+
+.menu-btn span:nth-of-type(2) {
+    top:calc(50% + 5px);
+}
+
+.menu-btn span:nth-of-type(3) {
+    top:calc(50% - 5px);
+}
+
+.menu-btn._active span:nth-of-type(1) {
+    display:none;
+}
+
+.menu-btn._active span:nth-of-type(2) {
+    top:50%;
+    transform: translate(-50%,0) rotate(45deg);
+}
+
+.menu-btn._active span:nth-of-type(3) {
+    top:50%;
+    transform: translate(-50%,0) rotate(-45deg);
+}
+
+
+
+@media (max-width: 1200px) {
+    .header__link {
+        font-size: 20px;
+    }
+}
+
+.one {
+    display: flex;
+    align-items: center;
+    margin-top:385px; 
+    padding:0px 15px; 
+    
+}
+
+@media (max-width: 991px) {
+    .one {
+        flex-direction:column; 
+        margin-top:200px; 
+        align-items: start;
+
+    }
+}
+.one__left {
+    display: flex;
+}
+
+@media (max-width: 480px) {
+    .one__left {
+    flex-direction:column; 
+}
+}
+.one__cart {
+    position:relative;
+}
+.one__cart-link {
+    text-decoration: none;
+}
+.one__cart-img {
+    max-width: 100%;
+}
+.one__cart-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: #FFFFFF;
+    position:absolute;
+    top: 165px;
+    left: 17px; 
+}
+
+@media (max-width: 480px) {
+    .one__cart-text {
+        font-size: 20px;
+        line-height: 30px; 
+        top:189px; 
+    }
+}
+.one__right {
+    margin-left:79px; 
+}
+
+@media (max-width: 991px) {
+    .one__right {
+    margin-left:0px; 
+}
+}
+.one__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 136px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+    .one__title {
+        font-size: 70px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .one__title {
+        font-size: 50px;
+        line-height: 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .one__title {
+        font-size: 35px;
+        line-height: 60px;
+    }
+}
+
+.one__margin {
+    margin-left:24px; 
+}
+
+@media (max-width: 480px) {
+    .one__margin {
+        margin-left:0px; 
+        margin-top: 30px; 
+    } 
+}
+
+/*Блок с карточками*/ 
+
+.bg-wrapper {
+    
+}
+.best {
+    padding:0px 15px; 
+}
+
+.best__title {
+    margin:70px 0px; 
+}
+.best__title h2  {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 95px;
+    text-align:center; 
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .best__title h2  {
+        font-size: 50px;
+        line-height: 70px;
+    }
+}
+
+.best__title h3 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    color: #FFFFFF; 
+
+}
+
+@media (max-width: 768px) {
+    .best__title h3  {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+.best__carts {
+    display:flex; 
+    gap:20px; 
+    flex-wrap:wrap; 
+}
+.best__cart {
+}
+.best__cartlink {
+}
+.best__cartimg {
+    max-width:100%; 
+}
+.best__carttext-link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    max-width:282px; 
+    display:block; 
+}
+
+@media (max-width: 768px) {
+    .best__carttext-link {
+        font-size: 20px;
+        line-height:30px; 
+    }
+}
+
+/*Блок с картинкой*/
+
+.bgman {
+    background-image: url(img/man.png);
+    max-width:100%;
+    height:485px;
+    background-size:cover; 
+    margin-top:70px; 
+    margin-bottom:70px; 
+    background-position:center; 
+}
+
+/* Блок с байком*/ 
+
+.bike {
+    padding:0px 15px; 
+    margin-top:70px; 
+    display: flex; 
+    align-items: center; 
+}
+
+@media (max-width: 991px) {
+    .bike {
+        flex-direction:column; 
+        align-items: start; 
+    }
+
+}
+.bike__left {
+    max-width:630px; 
+}
+
+@media (max-width: 1200px) {
+    .bike__left {
+        max-width:500px;
+    }
+}
+.bike__title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 68px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1200px) {
+    .bike__title {
+        font-size: 40px;
+    }
+}
+.bike__text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF; 
+    margin-top:48px; 
+}
+
+@media (max-width: 1200px) {
+    .bike__text  {
+        font-size: 17px;
+        margin-top:30px;
+    }
+}
+
+.bike__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF; 
+    border-radius: 20px; 
+    text-decoration: none; 
+    padding:23px 67px; 
+    display: block; 
+    max-width:238px; 
+    white-space:nowrap;  
+    margin-top:39px; 
+
+}
+.bike__right {
+    margin-left:70px; 
+}
+
+@media (max-width: 1200px) {
+    .bike__right {
+        margin-left:30px; 
+    }
+}
+
+@media (max-width: 991px) {
+    .bike__right {
+        margin-left:0px; 
+        margin-top: 50px; 
+    }
+}
+
+/*Подвал сайт*/ 
+
+.footer {
+    display:flex; 
+    justify-content: space-between; 
+    max-width:1083px; 
+    margin-top:122px; 
+    margin-bottom:101px; 
+    padding:0px 15px; 
+}
+
+@media (max-width: 991px) {
+    .footer {
+        flex-direction:column; 
+    }
+
+}
+.footer__menu-title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 41px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .footer__menu-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+.footer__menu {
+    margin-top:50px; 
+}
+
+}
+.footer__ul {
+    margin-top: 17px; 
+}
+.footer__li {
+    margin-top:14px; 
+}
+.footer__link {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-decoration: none; 
+}
+
+@media (max-width: 768px) {
+    .footer__link {
+        font-size: 17px; 
+        line-height: 20px; 
+    }
+}
+.footer__form {
+}
+.footer__formsubscribe {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    color: #FFFFFF;
+}
+.form {
+    margin-top:26px; 
+}
+
+@media (max-width: 991px) {
+    .footer__form {
+        margin-top:50px; 
+    }
+
+}
+.form__email {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #A3A3A3;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding:18px 26px; 
+}
+
+@media (max-width: 768px) {
+    .form__email {
+        padding:10px 20px;
+    }
+}
+.form__button {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000; 
+    background: #FFFFFF;
+    border-radius: 20px; 
+    padding:18px 53px; 
+    cursor:pointer; 
+    margin-left:21px; 
+}
+
+@media (max-width: 991px) {
+    .form__button {
+        margin-left:0px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .form__button {
+        padding:10px 20px;
+        font-size: 17px; 
+    }
+}
+
+@media (max-width: 490px) {
+    .form__button {
+        margin-top:20px; 
+    }
+}
+
+@media (max-width: 700px) {
+
+}
+
+@media (max-width: 500px) {
+    
+}
+
+#onelink {
+    font-size: 20px;
+    
+}
+
